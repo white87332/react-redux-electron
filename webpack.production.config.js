@@ -44,7 +44,7 @@ config.plugins.push(
             warnings: false
         }
     }),
-    new ExtractTextPlugin('./asset/css/bundle.min.css',
+    new ExtractTextPlugin('./asset/css/bundle/bundle.min.css',
     {
         allChunks: true
     })
