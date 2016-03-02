@@ -19,6 +19,12 @@ config.module.loaders.push({
     )
 });
 
+config.output = {
+    path: path.resolve(__dirname, 'public'),
+    filename: './asset/js/bundle/bundle.min.js',
+    chunkFilename: "./asset/js/bundle/bundle.[name].min.js"
+};
+
 config.plugins.push(
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.DefinePlugin(
@@ -38,7 +44,7 @@ config.plugins.push(
             warnings: false
         }
     }),
-    new ExtractTextPlugin('./public/asset/css/bundle.min.css',
+    new ExtractTextPlugin('./asset/css/bundle.min.css',
     {
         allChunks: true
     })

@@ -15,6 +15,13 @@ config.entry = [
     './public/src/containers/app'
 ];
 
+config.output = {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/public/asset/js/bundle/',
+    chunkFilename: "bundle.[name].js"
+};
+
 config.module.loaders.push({
     test: /\.scss$/,
     loader: "style-loader!css-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")

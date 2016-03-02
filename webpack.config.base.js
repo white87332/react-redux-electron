@@ -23,13 +23,6 @@ module.exports = {
             loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
     },
-    output:
-    {
-        path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js',
-        publicPath: '/public/asset/js/bundle/',
-        chunkFilename: "./asset/js/bundle/bundle.[name].js"
-    },
     resolve:
     {
         extensions: ['', '.js', '.jsx'],
