@@ -19,21 +19,16 @@ module.exports = {
             loader: "style-loader!css-loader"
         },
         {
-            test: /\.scss$/,
-            loader: "style-loader!css-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
-        },
-        {
             test: /\.(jpe?g|png|gif|svg)$/i,
             loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
     },
     output:
     {
-        path: path.join(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js',
         publicPath: '/public/asset/js/bundle/',
         chunkFilename: "./asset/js/bundle/bundle.[name].js"
-        // libraryTarget: 'commonjs2'
     },
     resolve:
     {

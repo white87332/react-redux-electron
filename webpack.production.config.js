@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
@@ -6,11 +7,17 @@ const baseConfig = require('./webpack.config.base');
 
 const config = Object.create(baseConfig);
 
-config.devtool = 'source-map';
-
 config.entry = [
     './public/src/containers/app'
 ];
+
+config.module.loaders.push({
+    test: /\.scss$/,
+    loader: ExtractTextPlugin.extract(
+        "style-loader",
+        'css-loader!sass-loader?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')
+    )
+});
 
 config.plugins.push(
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -31,7 +38,7 @@ config.plugins.push(
             warnings: false
         }
     }),
-    new ExtractTextPlugin('style.css',
+    new ExtractTextPlugin('./public/asset/css/bundle.min.css',
     {
         allChunks: true
     })

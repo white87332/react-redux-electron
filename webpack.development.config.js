@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 const baseConfig = require('./webpack.config.base');
@@ -10,9 +11,14 @@ config.debug = true;
 config.devtool = 'cheap-module-eval-source-map';
 
 config.entry = [
-    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+    'webpack-hot-middleware/client?path=http://127.0.0.1:3000/__webpack_hmr',
     './public/src/containers/app'
 ];
+
+config.module.loaders.push({
+    test: /\.scss$/,
+    loader: "style-loader!css-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "./node_modules/compass-mixins/lib")
+});
 
 config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
@@ -24,8 +30,7 @@ config.plugins.push(
         {
             'NODE_ENV': JSON.stringify('development')
         },
-        'global':
-        {},
+        'global': {},
     })
 );
 
