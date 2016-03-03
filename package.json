@@ -1,6 +1,6 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
+  "name": "react-redux-electron",
+  "version": "0.0.1",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -15,12 +15,11 @@
   },
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial"
+    "react",
+    "redux"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "Tony Jiang",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/white87332/react-redux-electron.git/issues"
   },
@@ -54,6 +53,8 @@
     "concurrently": "^2.0.0",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
+    "electron-debug": "^0.5.2",
+    "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.36.0",
     "express": "^4.13.4",
     "extract-text-webpack-plugin": "^1.0.1",
@@ -64,6 +65,9 @@
     "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
     "redbox-react": "^1.2.2",
+    "redux-devtools": "^3.1.1",
+    "redux-devtools-dock-monitor": "^1.1.0",
+    "redux-devtools-log-monitor": "^1.0.5",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
