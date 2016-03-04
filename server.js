@@ -23,7 +23,7 @@ app.get('*', (req, res) =>
 {
     res.sendFile(path.resolve(__dirname, 'public', 'index.html'));
 });
-
+//test
 app.listen(PORT, 'localhost', err =>
 {
     if (err)
