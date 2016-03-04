@@ -1,37 +1,8 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, hashHistory } from 'react-router';
-import { Provider } from 'react-redux';
-import configureStore from '../store/configureStore.js';
-import { syncHistoryWithStore } from 'react-router-redux';
-
-// store
-const store = configureStore();
-
-// react-router-redux
-const history = syncHistoryWithStore(hashHistory, store);
-
-// lazy load component
-const loadContainerAsync = bundle => (location, callback) =>
+if (process.env.NODE_ENV === 'production')
 {
-	bundle(component => {
-		callback(null, component.default);
-	});
-};
-
-const routes = (
-	<Router history={history}>
-		<Route path= "/" getComponent={loadContainerAsync(require('bundle?lazy&name=layout!../components/layout/layout'))} />
-		<Route getComponent={loadContainerAsync(require('bundle?lazy&name=layout!../components/layout/layout'))}>
-			<Route  path= "/posts" getComponent={loadContainerAsync(require('bundle?lazy&name=posts!../components/posts/posts'))} />
-			<Route  path= "/counter" getComponent={loadContainerAsync(require('bundle?lazy&name=counter!../components/counter/counter'))} />
-		</Route>
-    </Router>
-);
-
-render(
-	<Provider store={store}>
-		{routes}
-	</Provider>,
-	document.getElementById('root')
-);
+    module.exports = require('./app.prod');
+}
+else
+{
+    module.exports = require('./app.dev');
+}
