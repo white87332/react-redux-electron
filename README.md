@@ -1,5 +1,5 @@
 # react-redux-electron
-This is edited from electron-react-boilerplate (https://github.com/chentsulin/electron-react-boilerplate)
+This is edited from [electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
 
 ## Install
 
