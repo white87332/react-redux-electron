@@ -22,7 +22,7 @@ config.module.loaders.push({
 config.output = {
     path: path.resolve(__dirname, 'public'),
     filename: './asset/js/bundle/bundle.min.js',
-    chunkFilename: "./asset/js/bundle/bundle.[name].min.js"
+    chunkFilename: "./asset/js/bundle/chunk.[name].min.js"
 };
 
 config.plugins.push(
@@ -34,7 +34,7 @@ config.plugins.push(
         {
             'NODE_ENV': JSON.stringify('production')
         },
-        'global': {},
+        'global': {'GENTLY': false}
     }),
     new webpack.optimize.UglifyJsPlugin(
     {

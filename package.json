@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/white87332/react-redux-electron.git"
+    "url": "https://github.com/white87332/react-redux-electron.git"
   },
   "keywords": [
     "Electron",
@@ -63,9 +63,7 @@
     "json-loader": "^0.5.4",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.4.2",
-    "react-transform-catch-errors": "^1.0.2",
     "react-transform-hmr": "^1.0.2",
-    "redbox-react": "^1.2.2",
     "redux-devtools": "^3.1.1",
     "redux-devtools-dock-monitor": "^1.1.0",
     "redux-devtools-log-monitor": "^1.0.5",

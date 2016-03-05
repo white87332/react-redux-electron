@@ -19,7 +19,7 @@ config.output = {
     path: path.join(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: 'http://localhost:3000/public/asset/js/bundle/',
-    chunkFilename: "bundle.[name].js"
+    chunkFilename: "chunk.[name].js"
 };
 
 config.module.loaders.push({
@@ -37,7 +37,7 @@ config.plugins.push(
         {
             'NODE_ENV': JSON.stringify('development')
         },
-        'global': {},
+        'global': {'GENTLY': false}
     })
 );
 
