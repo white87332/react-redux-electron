@@ -1,6 +1,7 @@
 'use strict';
 
 const electron = require('electron');
+
 // Module to control application life.
 const app = electron.app;
 // Module to create native browser window.
@@ -15,8 +16,8 @@ function createWindow()
     // Create the browser window.
     mainWindow = new BrowserWindow(
     {
-        width: 1440,
-        height: 900
+        width: 1920,
+        height: 1080
     });
 
     // and load the index.html of the app.
