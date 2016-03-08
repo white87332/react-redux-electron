@@ -1,1 +1,17 @@
 @import "compass/reset";
+@import "compass/css3/flexbox";
+.flexContainer{
+    @include display-flex(flex);
+    @include flex-wrap(wrap);
+    @include flex-direction(row);
+    @include justify-content(space-around);
+    @include align-items(center);
+}
+.flexItem{
+    // @include flex(1);
+    @include flex-basis(210px);
+}
+.inner{
+    width: 200px;
+    // margin: 0 auto;
+}
