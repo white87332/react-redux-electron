@@ -36,7 +36,7 @@ render(
 	<Provider store={store}>
 		<div>
 			{routes}
-			<DevTools />;
+			<DevTools />
 		</div>
 	</Provider>,
 	document.getElementById('root')
