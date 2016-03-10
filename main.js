@@ -1,6 +1,8 @@
 'use strict';
 
+const fs = require('fs');
 const electron = require('electron');
+const ipcMain = electron.ipcMain;
 
 // Module to control application life.
 const app = electron.app;
@@ -58,5 +60,21 @@ app.on('activate', function()
     if (mainWindow === null)
     {
         createWindow();
+    }
+});
+
+/**
+ * [ipcMains]
+ */
+fs.readdir('./ipcMain', (err, files) =>
+{
+    for (let fileName of files)
+    {
+        if (fileName !== '.DS_Store')
+        {
+            let ipcObj = require('./ipcMain/' + fileName).default;
+            ipcObj.ipcMain = ipcMain;
+            ipcObj.init();
+        }
     }
 });
