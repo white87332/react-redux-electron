@@ -15,10 +15,6 @@ module.exports = {
             loader: "json-loader"
         },
         {
-            test: /\.css$/,
-            loader: "style-loader!css-loader"
-        },
-        {
             test: /\.(jpe?g|png|gif|svg)$/i,
             loader: 'url-loader?limit=8192&name=./asset/img/[name].[ext]'
         }]
