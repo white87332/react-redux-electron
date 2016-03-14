@@ -1,11 +1,11 @@
 import objectAssign from 'object-assign';
 import * as types from '../constants/actionTypes';
 
-const initialItems = {
+const initialState = {
     'list':[]
 };
 
-export default function posts(state = initialItems, action = {})
+export default function posts(state = initialState, action = {})
 {
     switch (action.type)
     {
