@@ -21,8 +21,8 @@ config.module.loaders.push({
 
 config.output = {
     path: path.resolve(__dirname, 'public'),
-    filename: './asset/js/bundle/bundle.min.js',
-    chunkFilename: "./asset/js/bundle/chunk.[name].min.js"
+    filename: '/asset/js/bundle/bundle.min.js',
+    chunkFilename: "/asset/js/bundle/chunk.[name].min.js"
 };
 
 config.plugins.push(
