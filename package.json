@@ -35,7 +35,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.3.0",
     "react-router-redux": "^4.0.2",
-    "redux": "^3.5.1",
+    "redux": "^3.5.2",
     "redux-thunk": "^2.0.1",
     "superagent": "^1.8.3"
   },
@@ -61,7 +61,7 @@
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.5.3",
+    "node-sass": "^3.6.0",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.2.0",
     "redux-devtools-dock-monitor": "^1.1.1",
