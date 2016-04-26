@@ -2,14 +2,16 @@ const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
 const config = require('./webpack.development.config');
+const rootPath = path.normalize(__dirname);
 
 const app = express();
 const compiler = webpack(config);
-
 const PORT = 3000;
 
+app.use(express.static(rootPath + '/public'));
 app.use(require('webpack-dev-middleware')(compiler,
 {
+    noInfo: true,
     publicPath: config.output.publicPath,
     stats:
     {

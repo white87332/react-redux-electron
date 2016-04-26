@@ -11,12 +11,13 @@ config.debug = true;
 config.devtool = 'cheap-module-eval-source-map';
 
 config.entry = [
-    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr',
+    // 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr', //electron
+    'webpack-hot-middleware/client', //web
     './public/src/containers/app'
 ];
 
 config.output = {
-    path: path.join(__dirname, 'dist'),
+    path: '/asset/js/bundle/',
     filename: 'bundle.js',
     publicPath: 'http://localhost:3000/public/asset/js/bundle/',
     chunkFilename: "chunk.[name].js"
