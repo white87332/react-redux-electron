@@ -29,7 +29,6 @@
     "classnames": "^2.2.4",
     "immutable": "^3.8.1",
     "lodash": "^4.11.1",
-    "object-assign": "^4.0.1",
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-redux": "^4.4.5",
@@ -50,7 +49,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "bundle-loader": "^0.5.4",
-    "compass-mixins": "^0.12.7",
     "concurrently": "^2.0.0",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
@@ -72,7 +70,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.10.0",
-    "webpack-target-electron-renderer": "^0.4.0"
+    "webpack-hot-middleware": "^2.10.0"
   }
 }

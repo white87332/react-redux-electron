@@ -16,10 +16,14 @@ config.entry = [
 ];
 
 config.output = {
+    //bundle
     path: '/asset/js/bundle/',
     filename: 'bundle.js',
+
+    //chunk
     publicPath: 'http://localhost:3000/public/asset/js/bundle/',
     chunkFilename: "chunk.[name].js",
+
     libraryTarget: 'commonjs2'
 };
 

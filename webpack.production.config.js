@@ -1,9 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 const baseConfig = require('./webpack.config.base');
-
 
 const config = Object.create(baseConfig);
 
@@ -15,14 +13,16 @@ config.module.loaders.push({
     test: /\.css|\.scss$/,
     loader: ExtractTextPlugin.extract(
         "style-loader",
-        'css-loader!sass-loader?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')
+        'css-loader!sass-loader'
     )
 });
 
 config.output = {
     path: path.resolve(__dirname, 'public'),
     filename: '/asset/js/bundle/bundle.min.js',
-    chunkFilename: "/asset/js/bundle/chunk.[name].min.js"
+    publicPath: path.resolve(__dirname, 'public'),
+    chunkFilename: "/asset/js/bundle/chunk.[name].min.js",
+    libraryTarget: 'commonjs2'
 };
 
 config.plugins.push(
@@ -50,6 +50,6 @@ config.plugins.push(
     })
 );
 
-config.target = webpackTargetElectronRenderer(config);
+config.target = 'electron-renderer';
 
 module.exports = config;
