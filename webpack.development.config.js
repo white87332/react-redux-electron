@@ -24,7 +24,7 @@ config.output = {
     publicPath: 'http://localhost:3000/public/asset/js/bundle/',
     chunkFilename: "chunk.[name].js",
 
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'var'
 };
 
 config.module.loaders.push({

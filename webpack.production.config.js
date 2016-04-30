@@ -22,7 +22,7 @@ config.output = {
     filename: '/asset/js/bundle/bundle.min.js',
     publicPath: path.resolve(__dirname, 'public'),
     chunkFilename: "/asset/js/bundle/chunk.[name].min.js",
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'var'
 };
 
 config.plugins.push(
