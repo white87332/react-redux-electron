@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const webpackTargetElectronRenderer = require('webpack-target-electron-renderer');
 const baseConfig = require('./webpack.config.base');
 
 
@@ -11,16 +10,21 @@ config.debug = true;
 config.devtool = 'cheap-module-eval-source-map';
 
 config.entry = [
-    // 'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr', //electron
-    'webpack-hot-middleware/client', //web
+    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr', //electron
+    // 'webpack-hot-middleware/client', //web
     './public/src/containers/app'
 ];
 
 config.output = {
+    //bundle
     path: '/asset/js/bundle/',
     filename: 'bundle.js',
+
+    //chunk
     publicPath: 'http://localhost:3000/public/asset/js/bundle/',
-    chunkFilename: "chunk.[name].js"
+    chunkFilename: "chunk.[name].js",
+
+    libraryTarget: 'var'
 };
 
 config.module.loaders.push({
@@ -47,6 +51,6 @@ config.plugins.push(
     })
 );
 
-config.target = webpackTargetElectronRenderer(config);
+config.target = 'electron-renderer';
 
 module.exports = config;

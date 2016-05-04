@@ -49,7 +49,6 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "bundle-loader": "^0.5.4",
-    "compass-mixins": "^0.12.7",
     "concurrently": "^2.0.0",
     "cross-env": "^1.0.7",
     "css-loader": "^0.23.1",
@@ -71,7 +70,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.0",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-hot-middleware": "^2.10.0",
-    "webpack-target-electron-renderer": "^0.4.0"
+    "webpack-hot-middleware": "^2.10.0"
   }
 }
