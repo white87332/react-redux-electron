@@ -15,8 +15,13 @@ config.module.loaders.push({
     test: /\.css|\.scss$/,
     loader: ExtractTextPlugin.extract(
         "style-loader",
-        'css-loader!sass-loader?includePaths[]=' + path.resolve(__dirname, './node_modules/compass-mixins/lib')
+        "css-loader!sass-loader"
     )
+});
+
+config.module.loaders.push({
+    test: /\.(jpe?g|png|gif|svg)$/i,
+    loader: 'url-loader?limit=1&name=/server/asset/img/[name].[ext]'
 });
 
 config.output = {
