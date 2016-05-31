@@ -1,4 +1,3 @@
-import objectAssign from 'object-assign';
 import * as types from '../constants/actionTypes';
 
 const initialState = {
@@ -10,7 +9,7 @@ export default function posts(state = initialState, action = {})
     switch (action.type)
     {
         case types.GET_LATEST_LIST:
-            return objectAssign({}, state, {
+            return Object.assign({}, state, {
                 'list': action.data
             });
         default:

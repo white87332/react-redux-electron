@@ -14,7 +14,8 @@ function mapStateToProps(state)
 function mapDispatchToProps(dispatch)
 {
     return {
-        actions : bindActionCreators(postsActions, dispatch)
+        dispatch,
+        postsActions
     };
 }
 
@@ -27,8 +28,8 @@ class Posts extends Component
 
     componentDidMount()
     {
-        const { postsList } = this.props.actions;
-        postsList();
+        const { dispatch, postsActions } = this.props;
+        dispatch(postsActions.postsList());
     }
 
     render()
@@ -48,8 +49,7 @@ class Posts extends Component
 }
 
 Posts.propTypes = {
-    posts: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired
+    posts: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Posts);
