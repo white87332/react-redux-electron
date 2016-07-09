@@ -27,9 +27,9 @@
   "homepage": "https://github.com/white87332/react-redux-electron.git#readme",
   "dependencies": {
     "immutable": "^3.8.1",
-    "react": "^15.2.0",
-    "react-addons-css-transition-group": "^15.2.0",
-    "react-dom": "^15.2.0",
+    "react": "^15.2.1",
+    "react-addons-css-transition-group": "^15.2.1",
+    "react-dom": "^15.2.1",
     "react-redux": "^4.4.5",
     "react-router": "^2.5.2",
     "react-router-redux": "^4.0.5",
