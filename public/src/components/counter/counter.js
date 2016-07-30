@@ -34,45 +34,19 @@ class Counter extends Component
 
         return (
             <div className="flexContainer">
-            <div className="flexItem">
-                <div className="inner">
-                    Clicked: {numbers} times
-                    {' '}
-                    <button onClick={increment}>+</button>
-                    {' '}
-                    <button onClick={decrement}>-</button>
-                    {' '}
-                    <button onClick={incrementIfOdd}>Increment if odd</button>
-                    {' '}
-                    <button onClick={() => incrementAsync()}>Increment async</button>
+                <div className="flexItem">
+                    <div className="inner">
+                        Clicked: {numbers} times
+                        {' '}
+                        <button onClick={increment}>+</button>
+                        {' '}
+                        <button onClick={decrement}>-</button>
+                        {' '}
+                        <button onClick={incrementIfOdd}>Increment if odd</button>
+                        {' '}
+                        <button onClick={() => incrementAsync()}>Increment async</button>
+                    </div>
                 </div>
-            </div>
-            <div className="flexItem">
-                <div className="inner">
-                    Clicked: {numbers} times
-                    {' '}
-                    <button onClick={increment}>+</button>
-                    {' '}
-                    <button onClick={decrement}>-</button>
-                    {' '}
-                    <button onClick={incrementIfOdd}>Increment if odd</button>
-                    {' '}
-                    <button onClick={() => incrementAsync()}>Increment async</button>
-                </div>
-            </div>
-            <div className="flexItem">
-                <div className="inner">
-                    Clicked: {numbers} times
-                    {' '}
-                    <button onClick={increment}>+</button>
-                    {' '}
-                    <button onClick={decrement}>-</button>
-                    {' '}
-                    <button onClick={incrementIfOdd}>Increment if odd</button>
-                    {' '}
-                    <button onClick={() => incrementAsync()}>Increment async</button>
-                </div>
-            </div>
             </div>
         );
     }
