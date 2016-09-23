@@ -29,7 +29,7 @@ config.output = {
 
 config.module.loaders.push({
     test: /\.css|\.scss$/,
-    loader: "style-loader!css-loader!sass-loader"
+    loader: "style-loader!css-loader!sass-loader?outputStyle=compressed"
 });
 
 config.module.loaders.push({

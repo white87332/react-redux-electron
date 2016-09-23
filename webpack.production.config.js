@@ -13,7 +13,7 @@ config.module.loaders.push({
     test: /\.css|\.scss$/,
     loader: ExtractTextPlugin.extract(
         "style-loader",
-        "css-loader!sass-loader"
+        "css-loader!sass-loader?outputStyle=compressed"
     )
 });
 
