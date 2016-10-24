@@ -1,6 +1,6 @@
 {
   "name": "react-redux-electron",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/white87332/react-redux-electron.git#readme",
   "dependencies": {
-    "immutable": "^3.8.1",
+    "deep-equal": "^1.0.1",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
     "react-addons-update": "^15.3.2",
@@ -49,10 +49,10 @@
     "bundle-loader": "^0.5.4",
     "concurrently": "^2.2.0",
     "cross-env": "^1.0.8",
-    "css-loader": "^0.23.1",
+    "css-loader": "^0.25.0",
     "electron-debug": "^1.0.1",
     "electron-packager": "^7.7.0",
-    "electron-prebuilt": "^1.4.3",
+    "electron-prebuilt": "^1.4.4",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
@@ -62,12 +62,12 @@
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
-    "redux-devtools-log-monitor": "^1.0.11",
-    "sass-loader": "^3.2.3",
+    "redux-devtools-log-monitor": "^1.1.0",
+    "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.2",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.12.2"
+    "webpack-hot-middleware": "^2.13.0"
   }
 }
