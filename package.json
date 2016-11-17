@@ -27,12 +27,12 @@
   "homepage": "https://github.com/white87332/react-redux-electron.git#readme",
   "dependencies": {
     "deep-equal": "^1.0.1",
-    "react": "^15.3.2",
-    "react-addons-css-transition-group": "^15.3.2",
-    "react-addons-update": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "react-redux": "^4.4.5",
-    "react-router": "^2.8.1",
+    "react": "^15.4.0",
+    "react-addons-css-transition-group": "^15.4.0",
+    "react-addons-update": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "react-redux": "^4.4.6",
+    "react-router": "^3.0.0",
     "react-router-redux": "^4.0.6",
     "redux": "^3.6.0",
     "redux-thunk": "^2.1.0"
@@ -50,15 +50,15 @@
     "concurrently": "^2.2.0",
     "cross-env": "^1.0.8",
     "css-loader": "^0.25.0",
-    "electron-debug": "^1.0.1",
+    "electron-debug": "^1.1.0",
     "electron-packager": "^7.7.0",
-    "electron-prebuilt": "^1.4.5",
+    "electron-prebuilt": "^1.4.7",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
     "json-loader": "^0.5.4",
     "node-libs-browser": "^1.0.0",
-    "node-sass": "^3.11.0",
+    "node-sass": "^3.13.0",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
@@ -68,6 +68,6 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.13.3",
     "webpack-dev-middleware": "^1.8.4",
-    "webpack-hot-middleware": "^2.13.1"
+    "webpack-hot-middleware": "^2.13.2"
   }
 }
