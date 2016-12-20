@@ -23,7 +23,7 @@ function createWindow()
     });
 
     // and load the index.html of the app.
-    mainWindow.loadURL('file://' + __dirname + '/public/index.html');
+    mainWindow.loadURL('file://' + process.cwd() + '/public/index.html');
 
     // Open the DevTools.
     mainWindow.webContents.openDevTools();
@@ -64,15 +64,15 @@ app.on('activate', function()
 });
 
 /**
- * [ipcMains]
+ * [ipc]
  */
-fs.readdir('./ipcMain', (err, files) =>
+fs.readdir('./ipc', (err, files) =>
 {
     for (let fileName of files)
     {
         if (fileName !== '.DS_Store')
         {
-            let ipcObj = require('./ipcMain/' + fileName).default;
+            let ipcObj = require('../ipc/' + fileName).default;
             ipcObj.ipcMain = ipcMain;
             ipcObj.init();
         }

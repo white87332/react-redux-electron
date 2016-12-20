@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
-const config = require('./webpack.development.config');
+const config = require('./webpack.client.dev.config');
 const rootPath = path.normalize(__dirname);
 
 const app = express();

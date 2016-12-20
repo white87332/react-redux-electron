@@ -1,21 +1,22 @@
 {
   "name": "react-redux-electron",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron index.js",
     "hot-server": "node server.js",
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron index.js",
     "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
-    "deploy": "NODE_ENV=production webpack -p --config webpack.production.config.js"
+    "prod": "electron build/main.js",
+    "build-ipc": "NODE_ENV=production webpack -p --config webpack.server.prod.config.js",
+    "build-ui": "NODE_ENV=production webpack -p --config webpack.client.prod.config.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/white87332/react-redux-electron.git"
   },
   "keywords": [
-    "Electron",
+    "electron",
     "react",
     "redux"
   ],
@@ -47,18 +48,18 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "bundle-loader": "^0.5.4",
-    "concurrently": "^2.2.0",
-    "cross-env": "^1.0.8",
-    "css-loader": "^0.25.0",
+    "concurrently": "^3.1.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.26.1",
     "electron-debug": "^1.1.0",
-    "electron-packager": "^7.7.0",
-    "electron-prebuilt": "^1.4.11",
+    "electron-packager": "^8.4.0",
+    "electron-prebuilt": "^1.4.12",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.8.5",
+    "file-loader": "^0.9.0",
     "json-loader": "^0.5.4",
-    "node-libs-browser": "^1.1.1",
-    "node-sass": "^3.13.0",
+    "node-libs-browser": "^2.0.0",
+    "node-sass": "^4.1.0",
     "react-transform-hmr": "^1.0.4",
     "redux-devtools": "^3.3.1",
     "redux-devtools-dock-monitor": "^1.1.1",
