@@ -8,8 +8,7 @@
     "start-hot": "cross-env HOT=1 NODE_ENV=development electron index.js",
     "dev": "concurrently --kill-others \"npm run hot-server\" \"npm run start-hot\"",
     "prod": "electron build/main.js",
-    "build-ipc": "NODE_ENV=production webpack -p --config webpack.server.prod.config.js",
-    "build-ui": "NODE_ENV=production webpack -p --config webpack.client.prod.config.js"
+    "build": "NODE_ENV=production webpack -p --config webpack.server.prod.config.js && NODE_ENV=production webpack -p --config webpack.client.prod.config.js"
   },
   "repository": {
     "type": "git",
