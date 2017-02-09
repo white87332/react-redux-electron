@@ -47,7 +47,7 @@
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "bundle-loader": "^0.5.4",
-    "concurrently": "^3.1.0",
+    "concurrently": "^3.2.0",
     "cross-env": "^3.1.4",
     "css-loader": "^0.26.1",
     "electron-debug": "^1.1.0",
