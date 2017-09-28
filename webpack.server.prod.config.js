@@ -5,8 +5,8 @@ const path = require('path');
 function getExternals()
 {
     const nodeModules = fs.readdirSync(path.join(process.cwd(), 'node_modules'));
-    return nodeModules.reduce(function(ext, mod) {
-        ext[mod] = 'commonjs ' + mod;
+    return nodeModules.reduce((ext, mod) => {
+        ext[mod] = `commonjs ${mod}`;
         return ext;
     }, {});
 }
@@ -17,30 +17,28 @@ module.exports = {
     output: {
         path: path.join(process.cwd(), 'build'),
         filename: 'main.js',
-        chunkFilename: "[name].js"
+        chunkFilename: '[id].js'
     },
     externals: getExternals(),
     module: {
-        loaders: [
+        rules: [
             {
-                test: /\.json$/,
-                loader: 'json-loader'
-            }, {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 query: {
-                    presets: [
-                        "es2015", "react", "stage-0"
-                    ],
-                    plugins: ["transform-decorators-legacy"]
+                    presets: ['react', 'es2015', 'stage-0'],
+                    plugins: ['transform-decorators-legacy']
                 },
                 exclude: /(node_modules)/
             }
-        ]
+        ],
+        exprContextCritical: false
     },
     plugins: [
         new webpack.IgnorePlugin(/\.(css|less|scss|svg|png|jpe?g|png)$/),
-        new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-        new webpack.DefinePlugin({ 'process.env.NODE_ENV': '"production"' })
+        new webpack.LoaderOptionsPlugin({
+            minimize: true,
+            debug: false
+        })
     ]
 };

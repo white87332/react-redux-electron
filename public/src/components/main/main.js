@@ -1,8 +1,15 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './main.scss';
-import React, { Component } from 'react';
 
-class Main extends Component
+class Main extends React.Component
 {
+    constructor(props, context)
+    {
+        super(props, context);
+        this.state = {};
+    }
+
     render()
     {
         return (
@@ -12,5 +19,9 @@ class Main extends Component
         );
     }
 }
+
+Main.propTypes = {
+    children: PropTypes.object.isRequired
+};
 
 export default Main;

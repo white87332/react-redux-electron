@@ -1,58 +1,49 @@
-const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.config.base');
 
-const config = Object.create(baseConfig);
+const config = Object.assign({}, baseConfig);
 
 config.entry = [
     './public/src/containers/app'
 ];
 
-config.module.loaders.push({
-    test: /\.css|\.scss$/,
-    loader: ExtractTextPlugin.extract(
-        "style-loader",
-        "css-loader!sass-loader?outputStyle=compressed"
-    )
-});
-
-config.module.loaders.push({
+config.module.rules.push({
     test: /\.(jpe?g|png|gif|svg)$/i,
     loader: 'url-loader?limit=1&name=/server/asset/img/[name].[ext]'
 });
 
 config.output = {
-    path: path.resolve(__dirname, 'public'),
-    filename: '/asset/js/bundle/bundle.min.js',
-    publicPath: path.resolve(__dirname, 'public'),
-    chunkFilename: "/asset/js/bundle/chunk.[name].min.js",
+    path: `${process.cwd()}/public/bundle/js/`,
+    filename: 'bundle.min.js',
+    publicPath: `${process.cwd()}/public/bundle/js/`,
+    chunkFilename: 'chunk.[id].min.js',
     libraryTarget: 'var'
 };
 
 config.plugins.push(
-    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.DefinePlugin(
-    {
-        '__DEV__': false,
-        'process.env':
         {
-            'NODE_ENV': JSON.stringify('production')
-        },
-        'global': {'GENTLY': false}
-    }),
+            __DEV__: false,
+            'process.env':
+            {
+                NODE_ENV: JSON.stringify('production')
+            },
+            global: { GENTLY: false }
+        }),
     new webpack.optimize.UglifyJsPlugin(
-    {
-        compressor:
         {
-            screw_ie8: true,
-            warnings: false
-        }
-    }),
-    new ExtractTextPlugin('./asset/css/bundle/bundle.min.css',
-    {
-        allChunks: true
-    })
+            compressor:
+            {
+                screw_ie8: true,
+                warnings: false
+            }
+        }),
+    new ExtractTextPlugin('./build/css/bundle.min.css',
+        {
+            allChunks: true
+        })
 );
 
 config.target = 'electron-renderer';

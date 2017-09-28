@@ -1,54 +1,45 @@
-const path = require('path');
 const webpack = require('webpack');
 const baseConfig = require('./webpack.config.base');
 
+const config = Object.assign({}, baseConfig);
 
-const config = Object.create(baseConfig);
-
-config.debug = true;
-
-config.devtool = 'cheap-module-eval-source-map';
+// config.devtool = 'inline-source-map';
 
 config.entry = [
-    'webpack-hot-middleware/client?path=http://localhost:3000/__webpack_hmr', //electron
-    // 'webpack-hot-middleware/client', //web
+    // 'webpack-hot-middleware/client?path=http://127.0.0.1:3000/__webpack_hmr', // electron
+    'webpack-hot-middleware/client', //web
     './public/src/containers/app'
 ];
 
 config.output = {
-    //bundle
-    path: '/asset/js/bundle/',
+    // bundle
+    path: '/bundle/js/',
     filename: 'bundle.js',
 
-    //chunk
-    publicPath: 'http://localhost:3000/public/asset/js/bundle/',
-    chunkFilename: "chunk.[name].js",
+    // chunk
+    publicPath: 'http://127.0.0.1:3000/public/bundle/js/',
+    chunkFilename: 'chunk.[id].js',
 
     libraryTarget: 'var'
 };
 
-config.module.loaders.push({
-    test: /\.css|\.scss$/,
-    loader: "style-loader!css-loader!sass-loader?outputStyle=compressed"
-});
-
-config.module.loaders.push({
+config.module.rules.push({
     test: /\.(jpe?g|png|gif|svg)$/i,
     loader: 'url-loader?limit=1'
 });
 
 config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin(
-    {
-        '__DEV__': true,
-        'process.env':
         {
-            'NODE_ENV': JSON.stringify('development')
-        },
-        'global': {'GENTLY': false}
-    })
+            __DEV__: true,
+            'process.env':
+            {
+                NODE_ENV: JSON.stringify('development')
+            },
+            global: { GENTLY: false }
+        })
 );
 
 config.target = 'electron-renderer';

@@ -1,9 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import rootReducer from '../reducers';
 import thunk from 'redux-thunk';
-
-import { persistState } from 'redux-devtools';
-import DevTools from '../components/devTools/devTools';
+import rootReducer from '../reducers';
 
 export default function configureStore(initialState)
 {
@@ -12,12 +9,7 @@ export default function configureStore(initialState)
         initialState,
         compose(
             applyMiddleware(thunk),
-            DevTools.instrument(),
-            persistState(
-                window.location.href.match(
-                    /[?&]debug_session=([^&]+)\b/
-                )
-            )
+            window.devToolsExtension ? window.devToolsExtension() : f => f
         )
     );
 
