@@ -6,12 +6,12 @@ import asyncComponent from '../utils/asyncComponent';
 export default function createRoutes()
 {
     return (
-        <Main>
-            <HashRouter>
+        <HashRouter>
+            <Main>
                 <Switch>
                     <Route exact path="/" component={asyncComponent(() => System.import('../containers/counter/counter').then(module => module.default))} />
                 </Switch>
-            </HashRouter>
-        </Main>
+            </Main>
+        </HashRouter>
     );
 }

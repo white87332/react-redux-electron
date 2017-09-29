@@ -40,7 +40,7 @@ config.plugins.push(
                 warnings: false
             }
         }),
-    new ExtractTextPlugin('./build/css/bundle.min.css',
+    new ExtractTextPlugin(`${process.cwd()}/public/bundle/css/bundle.min.css`,
         {
             allChunks: true
         })
