@@ -9,7 +9,7 @@ export default function createRoutes()
         <HashRouter>
             <Main>
                 <Switch>
-                    <Route exact path="/" component={asyncComponent(() => System.import('../containers/counter/counter').then(module => module.default))} />
+                    <Route exact path="/" component={asyncComponent(() => import('../containers/counter/counter').then(module => module.default))} />
                 </Switch>
             </Main>
         </HashRouter>

@@ -13,6 +13,18 @@ config.module.rules.push({
     loader: 'url-loader?limit=1&name=/server/asset/img/[name].[ext]'
 });
 
+config.module.rules.push({
+    test: /\.css|\.scss$/,
+    use: ExtractTextPlugin.extract({
+        use: [{
+            loader: 'css-loader'
+        },
+        {
+            loader: 'sass-loader'
+        }]
+    }),
+});
+
 config.output = {
     path: `${process.cwd()}/public/bundle/js/`,
     filename: 'bundle.min.js',
@@ -40,10 +52,10 @@ config.plugins.push(
                 warnings: false
             }
         }),
-    new ExtractTextPlugin(`${process.cwd()}/public/bundle/css/bundle.min.css`,
-        {
-            allChunks: true
-        })
+    new ExtractTextPlugin({
+        filename: '../css/bundle.min.css',
+        allChunks: true
+    })
 );
 
 config.target = 'electron-renderer';

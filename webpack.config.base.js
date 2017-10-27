@@ -9,19 +9,6 @@ module.exports = {
                 loader: 'babel',
                 include: path.resolve(__dirname, 'public'),
                 exclude: /node_modules/
-            }, {
-                test: /\.css|\.scss$/,
-                use: [
-                    'style', {
-                        loader: 'css',
-                        options: {
-                            options: {
-                                modules: false
-                            }
-                        }
-                    },
-                    'sass?outputStyle=compressed'
-                ]
             }
         ]
     },

@@ -28,6 +28,21 @@ config.module.rules.push({
     loader: 'url-loader?limit=1'
 });
 
+config.module.rules.push({
+    test: /\.css|\.scss$/,
+    use: [
+        'style', {
+            loader: 'css',
+            options: {
+                options: {
+                    modules: false
+                }
+            }
+        },
+        'sass?outputStyle=compressed'
+    ]
+});
+
 config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
